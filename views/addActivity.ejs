@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Add a new activity</title>
+    </head>
+
+    <body>
+        <%- include('header') %>
+            <div class="container">
+                <h2>Add a new activity</h2>
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <label for="name">Activity name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="club">Club:</label>
+                        <input type="text" class="form-control" id="club" name="club" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Opening date:</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="participants">Number of participants:</label>
+                        <input type="number" class="form-control" id="participants" name="participants" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Add</button>
+                </form>
+            </div>
+            <%- include ('footer') %>
+    </body>
+
+</html>

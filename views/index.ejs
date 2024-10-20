@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Finding your favourite club</title>
+    </head>
+
+    <body>
+        <%- include('header') %>
+            <div class="container">
+                <h3>List of existing club and activities in Dasha Highschool</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Activity name</th>
+                            <th>Club</th>
+                            <th>Opening date</th>
+                            <th>Number of participants</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% activities.forEach((activity, index)=> { %>
+                            <tr>
+                                <td>
+                                    <%= activity.name %>
+                                </td>
+                                <td>
+                                    <%= activity.club %>
+                                </td>
+                                <td>
+                                    <%= activity.date %>
+                                </td>
+                                <td>
+                                    <%= activity.participants %>
+                                </td>
+                                <td>
+                                    <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <%- include('footer') %>
+    </body>
+
+</html>

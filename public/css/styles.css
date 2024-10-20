@@ -1,0 +1,16 @@
+body {
+    padding: 20px;
+}
+
+header {
+    background: #f8f9fa;
+    color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #f8f9fa;
+}
